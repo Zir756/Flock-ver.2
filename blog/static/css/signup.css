@@ -1,0 +1,51 @@
+/* 全体のフォームのスタイル */
+body {
+    background-color: #7C7C7C;
+}
+
+.signup-form {
+    max-width: 400px; /* フォームの最大幅 */
+    margin: 0 auto; /* 中央揃え */
+    padding: 20px;
+    background-color: #BBBBBB; /* 背景色 */
+    border-radius: 8px; /* 角丸 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影 */
+}
+
+/* フォームのラベルのスタイル */
+.signup-form label {
+    display: block; /* ブロックレベル要素として表示 */
+    margin-bottom: 6px; /* 下の余白 */
+    font-weight: bold; /* 太字 */
+}
+
+/* 入力フィールドのスタイル */
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    width: 100%; /* 幅を100%に */
+    padding: 10px; /* 内側のパディング */
+    margin-bottom: 20px; /* 下の余白 */
+    border: 1px solid #ccc; /* 境界線 */
+    border-color: #000000;
+    background-color: #FFFFFF; /* 背景色 */
+    border-radius: 4px; /* 角丸 */
+    box-sizing: border-box; /* ボックスサイジング */
+}
+
+/* Submitボタンのスタイル */
+.signup-form button[type="submit"] {
+    width: 100%; /* 幅を100%に */
+    background-color: #007bff; /* ボタンの背景色 */
+    color: #fff; /* テキストの色 */
+    border: none; /* 境界線なし */
+    border-radius: 4px; /* 角丸 */
+    cursor: pointer; /* カーソルのスタイル */
+    transition: background-color 0.3s; /* 背景色の変化をスムーズに */
+}
+
+/* Submitボタンのホバースタイル */
+.signup-form button[type="submit"]:hover {
+    background-color: #000000; /* ホバー時の背景色 */
+}
+

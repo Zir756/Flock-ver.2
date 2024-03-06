@@ -1,0 +1,26 @@
+.todo-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    cursor: pointer; /* マウスが要素上にあるときにポインターが表示される */
+}
+
+.todo-card:hover {
+    color: red; /* ホバー時の文字色を赤に変更 */
+    text-decoration: underline; /* ホバー時に下線を表示 */
+    cursor: pointer; /* ホバー時にポインターカーソルを表示 */
+}
+
+
+.todo-title {
+    font-size: 14px;
+    font-weight: bold;
+    transform: translate(-50%, -50%); /* カードの中央に配置 */
+}
+
+.todo-description {
+    font-size: 10px;
+    color: #555;
+}

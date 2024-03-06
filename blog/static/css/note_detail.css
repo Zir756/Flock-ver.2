@@ -1,0 +1,48 @@
+body {
+    background-color: #7C7C7C;
+    font-family: 'Times New Roman', cursive;
+    color: #000000;
+}
+
+.page-header {
+    background-color: #0FF6E9;
+    padding: 20px 20px 20px 40px;
+    border-bottom: 1px solid #7C7C7C;
+    position: relative;
+}
+
+.page-header h1, .page-header h1 a {
+    color: #F745E9;
+    font-size: 36pt;
+    text-decoration: none;
+    font-family: 'Times New Roman';
+}
+
+.signup-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.content {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #0FF6E9;
+}
+
+a:hover {
+    text-decoration: underline;
+}

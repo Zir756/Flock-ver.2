@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/todo_list.css' %}">
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        {% for todo in todos %}
+            <!-- Todoリストの項目にCSSのクラスを適用する -->
+            <li class="todo-card"><a href="{% url 'todo_detail' pk=todo.pk %}" class="todo-title">{{ todo.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/todo_detail.css' %}">
+</head>
+<body>
+    <h1>{{ todo.title }}</h1>
+    <p>{{ todo.description }}</p>
+    <p>Deadline: {{ todo.deadline }}</p>
+    <a href="{% url 'todo_edit' pk=todo.pk %}">Edit</a>
+    <a href="{% url 'todo_delete' pk=todo.pk %}">Delete</a>
+</body>
+</html>
