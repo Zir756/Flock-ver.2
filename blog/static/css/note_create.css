@@ -4,11 +4,17 @@ body {
     text-align: center; /* テキストを中央に配置 */
 }
 
-.form-group {
+form {
     display: inline-block; /* フォームをブロック要素として扱い、横並びにする */
     text-align: left; /* フォーム内のテキストを左寄せ */
-    margin-right: 20px; /* TitleとDeadlineの間のスペースを広げる */
-    margin-left: 20px; /* TitleとDeadlineの間のスペースを広げる */
+}
+
+h1 {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 label {
@@ -21,18 +27,16 @@ input[type="text"],
 textarea {
     width: 100%;
     /*padding: 10px;*/
-    font-size: 16px;
     /*border: 1px solid #ccc;*/
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 button[type="submit"] {
     padding: 10px 20px;
-    font-size: 16px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
