@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/group_detail.css' %}">
+</head>
+<body>
+    <h1>Group Detail: {{ group.name }}</h1>
+    <ul>
+        {% for member in group.members.all %}
+            <li>{{ member.username }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -89,4 +90,15 @@ class Note(models.Model):
         return self.title
     
     # objectsマネージャーを追加する。  
+    objects = models.Manager()
+    
+class Group(models.Model):
+    name = models.CharField(max_length=100)
+    members = models.ManyToManyField(User)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.name
+    
+     # objectsマネージャーを追加する。  
     objects = models.Manager()

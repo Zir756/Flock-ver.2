@@ -12,6 +12,10 @@ from .models import ToDo
 
 from .models import Note
 
+from .models import Group
+
+# from .join_group_form import JoinGroupForm
+
 # これはフォームの名前です。 このフォームが ModelForm の一種だとDjangoに伝える必要があります。  
 class PostForm(forms.ModelForm):
 
@@ -48,3 +52,11 @@ class NoteForm(forms.ModelForm):
         widgets = {
             'deadline': forms.DateInput(attrs={'type': 'date'})
         }
+        
+class GroupForm(forms.ModelForm):
+    class Meta:
+        model = Group
+        fields = ['name', 'members']
+        
+class JoinGroupForm(forms.Form):
+        group_code = forms.CharField(max_length=100)

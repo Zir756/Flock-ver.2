@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/group_list.css' %}">
+</head>
+<body>
+    <h1>Group List</h1>
+    {% if request.GET.next == '/group/' %}
+    <a href="{% url 'post_list' %}" class="btn btn-primary">メインページに戻る</a>
+    {% endif %}
+    <ul>
+        {% for group in groups %}
+            <li><a href="{% url 'group_detail' group.pk %}">{{ group.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

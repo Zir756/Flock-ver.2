@@ -24,13 +24,20 @@ from .models import Note
 
 from .forms import NoteForm
 
+from .models import Group
+
+from .forms import GroupForm, JoinGroupForm
+
 # post_list関数  
+@login_required
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     todos = ToDo.objects.all()  # ToDoリストを取得
     print(todos)  # ToDoリストが正しく取得されているかを確認するためのデバッグ出力
-    form = ToDoForm()  # ToDo追加フォームを作成
-    return render(request, 'blog/post_list.html', {'posts': posts, 'todos': todos, 'form': form})
+    form = ToDoForm()  # ToDo追加フォームを作成  
+    user = request.user
+    groups = user.groups.all()
+    return render(request, 'blog/post_list.html', {'posts': posts, 'todos': todos, 'form': form, 'groups': groups})
     
     # # 投稿をtimezoneを参照して並べ替える。  
     # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -40,6 +47,7 @@ def post_list(request):
     # return render(request, 'blog/post_list.html', {'posts': posts})
     
 # post_detail関数  
+@login_required
 def post_detail(request, pk):
   
     # 与えられたpkのPostがない場合、Page Not Found 404 ページが表示されます。
@@ -215,3 +223,43 @@ def note_delete(request, pk):
     note = Note.objects.get(pk=pk)
     note.delete()
     return redirect('note_list')
+    
+@login_required
+def group_list(request):
+    groups = Group.objects.all()
+    return render(request, 'group/group_list.html', {'groups': groups})
+
+@login_required
+def group_detail(request, pk):
+    group = Group.objects.get(pk=pk)
+    return render(request, 'group/group_detail.html', {'group': group})
+
+@login_required
+def group_create(request):
+    if request.method == 'POST':
+        form = GroupForm(request.POST)
+        if form.is_valid():
+            group = form.save()
+            group.members.add(request.user)  # グループ作成者をメンバーに追加する
+            return redirect('post_list')
+    else:
+        form = GroupForm()
+    return render(request, 'group/group_create.html', {'form': form})
+
+@login_required
+def group_update(request, pk):
+    group = Group.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = GroupForm(request.POST, instance=group)
+        if form.is_valid():
+            form.save()
+            return redirect('post_list')
+    else:
+        form = GroupForm(instance=group)
+    return render(request, 'group/group_update.html', {'form': form})
+
+@login_required
+def group_delete(request, pk):
+    group = Group.objects.get(pk=pk)
+    group.delete()
+    return redirect('group_list')

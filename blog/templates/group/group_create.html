@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Group</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/group_create.css' %}">
+</head>
+<body>
+    <h1>Create New Group</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Group</button>
+    </form>
+</body>
+</html>

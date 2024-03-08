@@ -23,6 +23,7 @@ urlpatterns = [
     path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
     
     path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
+    
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
     
     path('signup/', views.signup, name='signup'),
@@ -41,4 +42,10 @@ urlpatterns = [
     path('note/new/', views.note_create, name='note_create'),
     path('note/<int:pk>/edit/', views.note_update, name='note_update'),
     path('note/<int:pk>/delete/', views.note_delete, name='note_delete'),
+    
+    path('group/', views.group_list, name='group_list'),
+    path('group/<int:pk>/', views.group_detail, name='group_detail'),
+    path('group/create/', views.group_create, name='group_create'),
+    path('note/<int:pk>/edit/', views.group_update, name='group_update'),
+    path('note/<int:pk>/delete/', views.group_delete, name='group_delete'),
 ]
