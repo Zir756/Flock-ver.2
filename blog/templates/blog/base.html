@@ -27,36 +27,42 @@
                 {% endblock %}
                 </div>
                 <div class="col-xs-3">
-                    <!-- ToDoリストを表示するためのコードを追加 -->
-                    {% include 'todo/todo_list.html' %}
-                    <!-- ToDo追加フォームを表示する -->
-                    <form method="post" action="{% url 'todo_create' %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-primary">ToDoを追加</button>
-                    </form>
+                    {% if user.is_authenticated %}
+                        <!-- ToDoリストを表示するためのコードを追加 -->
+                        {% include 'todo/todo_list.html' %}
+                        <!-- ToDo追加フォームを表示する -->
+                        <form method="post" action="{% url 'todo_create' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">ToDoを追加</button>
+                        </form>
+                    {% endif %}
                 </div>
                 <div class="col-xs-3">
-                    <!-- Memoリストを表示するためのコードを追加 -->
-                    {% include 'note/note_list.html' %}
-                    <!-- Memo追加フォームを表示する -->
-                    <form method="post" action="{% url 'note_create' %}">
-                        {% csrf_token %}
-                        <input type="text" name="title" placeholder="タイトル">
-                        <textarea name="content" placeholder="内容"></textarea>
-                        <button type="submit" class="btn btn-primary">メモを追加</button>
-                        <a href="{% url 'note_list' %}" class="btn btn-primary">メモ一覧ページへ</a>
-                    </form>
+                    {% if user.is_authenticated %}
+                        <!-- Memoリストを表示するためのコードを追加 -->
+                        {% include 'note/note_list.html' %}
+                        <!-- Memo追加フォームを表示する -->
+                        <form method="post" action="{% url 'note_create' %}">
+                            {% csrf_token %}
+                            <input type="text" name="title" placeholder="タイトル">
+                            <textarea name="content" placeholder="内容"></textarea>
+                            <button type="submit" class="btn btn-primary">メモを追加</button>
+                            <a href="{% url 'note_list' %}" class="btn btn-primary">メモ一覧ページへ</a>
+                        </form>
+                    {% endif %}
                 </div>
                 <div>
-                    <!-- Memoリストを表示するためのコードを追加 -->
-                    {% include 'group/group_list.html' %}
-                    <!-- Memo追加フォームを表示する -->
-                    <form method="post" action="{% url 'group_create' %}">
-                        {% csrf_token %}
-                        <input type="text" name="group_code">
-                        <a href="{% url 'group_create' %}">新しいグループを作成</a>
-                        <a href="{% url 'group_list' %}" class="btn btn-primary">グループ一覧へ</a>
-                    </form>
+                    {% if user.is_authenticated %}
+                        <!-- Memoリストを表示するためのコードを追加 -->
+                        {% include 'group/group_list.html' %}
+                        <!-- Memo追加フォームを表示する -->
+                        <form method="post" action="{% url 'group_create' %}">
+                            {% csrf_token %}
+                            <input type="text" name="group_code">
+                            <a href="{% url 'group_create' %}">新しいグループを作成</a>
+                            <a href="{% url 'group_list' %}" class="btn btn-primary">グループ一覧へ</a>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
         </div>
