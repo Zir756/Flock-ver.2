@@ -220,6 +220,7 @@ def note_update(request, pk):
 
 @login_required
 def note_delete(request, pk):
+    note = get_object_or_404(Note, pk=pk)
     note = Note.objects.get(pk=pk)
     note.delete()
     return redirect('note_list')
@@ -241,7 +242,7 @@ def group_create(request):
         if form.is_valid():
             group = form.save()
             group.members.add(request.user)  # グループ作成者をメンバーに追加する
-            return redirect('post_list')
+            return redirect('group_detail', pk=group.pk)
     else:
         form = GroupForm()
     return render(request, 'group/group_create.html', {'form': form})
@@ -260,6 +261,8 @@ def group_update(request, pk):
 
 @login_required
 def group_delete(request, pk):
+    group = get_object_or_404(Group, pk=pk)
     group = Group.objects.get(pk=pk)
     group.delete()
     return redirect('group_list')
+    

@@ -55,6 +55,7 @@ class NoteForm(forms.ModelForm):
         
 class GroupForm(forms.ModelForm):
     class Meta:
+        members = forms.ModelMultipleChoiceField(queryset=User.objects.all(), widget=forms.CheckboxSelectMultiple)
         model = Group
         fields = ['name', 'members']
         

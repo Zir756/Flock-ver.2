@@ -12,5 +12,7 @@
             <li>{{ member.username }}</li>
         {% endfor %}
     </ul>
+    <a href="{% url 'group_update' group.pk %}">Edit</a>
+    <a href="{% url 'group_delete' group.pk %}">Delete</a>
 </body>
 </html>
