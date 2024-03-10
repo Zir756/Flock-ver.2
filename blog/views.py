@@ -480,4 +480,3 @@ def group_delete(request, pk):
     group.delete()
     # グループが削除されたら、グループリストページにリダイレクトする。
     return redirect('group_list')
-    
