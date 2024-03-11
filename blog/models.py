@@ -140,3 +140,4 @@ class Group(models.Model):
     
      # objectsマネージャーを追加する。  
     objects = models.Manager()
+    
