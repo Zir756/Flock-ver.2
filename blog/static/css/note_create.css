@@ -1,7 +1,13 @@
+h1 {
+    color: #FFFFFF;
+}
+
 body {
     font-family: 'Times New Roman', cursive;
-    background-color: #7C7C7C;
+    background-image: url('create&edit.jpg');
     text-align: center; /* テキストを中央に配置 */
+    background-size: cover; /* 画像をウィンドウ全体に広げる */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
 }
 
 form {
@@ -10,11 +16,14 @@ form {
 }
 
 h1 {
-    color: #333;
+    color: #FFFFFF;
 }
 
 .form-group {
     margin-bottom: 20px;
+    max-width: 800px;
+    width: 80%;
+    color: #FFFFFF;
 }
 
 label {

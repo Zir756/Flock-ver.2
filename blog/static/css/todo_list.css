@@ -19,6 +19,7 @@ h1 {
 
 
 .todo-title {
+    color: #000000;
     font-size: 14px;
     font-weight: bold;
     transform: translate(-50%, -50%); /* カードの中央に配置 */

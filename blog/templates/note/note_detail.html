@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{% static 'css/note_detail.css' %}">
 </head>
 <body>
+    <a href="{% url 'post_list' %}" class="btn btn-primary">メインページに戻る</a>
     <h1>Note Detail</h1>
     <h2>{{ note.title }}</h2>
     <p>{{ note.content }}</p>

@@ -1,7 +1,19 @@
+h1 {
+    color: #FFFFFF;
+    margin-bottom: 20px; /* h1要素の下のマージンを追加 */
+}
+
 body {
     font-family: 'Times New Roman', cursive;
-    background-color: #7C7C7C;
+    background-image: url('create&edit.jpg');
     text-align: center; /* テキストを中央に配置 */
+    background-size: cover; /* 画像をウィンドウ全体に広げる */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
+}
+
+.btn-primary {
+    display: inline-block; /* リンクをインライン要素として配置 */
+    color: #FFFFFF;
 }
 
 form {
@@ -9,8 +21,9 @@ form {
     text-align: left; /* フォーム内のテキストを左寄せ */
 }
 
-h1 {
-    color: #333;
+label {
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 button[type="submit"] {

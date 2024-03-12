@@ -65,6 +65,7 @@
                     {% endif %}
                 </div>
                 <div class="qa-section">
+                    {% if user.is_authenticated %}
                     <h2>Q&A</h2>
                     <!-- 質問の一覧を表示 -->
                     <ul>
@@ -74,6 +75,7 @@
                     </ul>
                     <!-- チャットページへのリンク -->
                     <a href="{% url 'qa_chat_page' %}" class="btn btn-primary">Q&Aの専用ページ</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

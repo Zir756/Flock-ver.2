@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>Create ToDo</h1>
+    <a href="{% url 'post_list' %}" class="btn btn-primary" style="color: #FFFFFF;">メインページに戻る</a>
     <form method="post">
         {% csrf_token %}
         <div class="form-group">

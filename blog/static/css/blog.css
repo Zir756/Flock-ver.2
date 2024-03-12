@@ -17,10 +17,10 @@ body, .page-header {
 
 .page-header {
     position: relative; /* ポジションを相対に設定 */
-    background-color: #0FF6E9;
+    /*background-color: #0FF6E9;*/
     margin-top: 0;
     padding: 20px 20px 20px 40px;
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
 }
 
 .signup-link {

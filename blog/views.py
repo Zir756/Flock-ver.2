@@ -516,12 +516,8 @@ def post_chat_message(request):
     else:
         form = MessageForm()
     return render(request, 'qa_chat_page', {'form': form})
-    
-@login_required
-def edit_message(request, message_id):
-    # メッセージの編集ロジックを実装する
-    return HttpResponse("Edit message")
 
+@login_required
 def delete_message(request, message_id):
     # メッセージの削除ロジックを実装する
     message = Message.objects.get(pk=message_id)

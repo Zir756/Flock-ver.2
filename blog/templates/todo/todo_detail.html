@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{% static 'css/todo_detail.css' %}">
 </head>
 <body>
+    <a href="{% url 'post_list' %}" class="btn btn-primary">メインページに戻る</a>
     <h1>{{ todo.title }}</h1>
     <p>{{ todo.description }}</p>
     <p>Deadline: {{ todo.deadline }}</p>

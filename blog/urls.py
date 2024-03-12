@@ -114,6 +114,5 @@ urlpatterns = [
     path('qa_chat_page/', views.qa_chat_page, name='qa_chat_page'),
     path('post_question/', views.post_question, name='post_question'),
     path('post_chat_message/', views.post_chat_message, name='post_chat_message'),
-    path('edit_message/<int:message_id>/', views.edit_message, name='edit_message'),
     path('delete_message/<int:message_id>/', views.delete_message, name='delete_message'),
 ]

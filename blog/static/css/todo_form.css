@@ -1,14 +1,20 @@
+h1 {
+    color: #FFFFFF;
+}
+
 body {
     font-family: 'Times New Roman', cursive;
-    background-color: #7C7C7C;
+    background-image: url('create&edit.jpg');
     text-align: center; /* テキストを中央に配置 */
+    background-size: cover; /* 画像をウィンドウ全体に広げる */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
 }
 
 .form-group {
     display: inline-block; /* フォームをブロック要素として扱い、横並びにする */
     text-align: left; /* フォーム内のテキストを左寄せ */
-    margin-right: 20px; /* TitleとDeadlineの間のスペースを広げる */
-    margin-left: 20px; /* TitleとDeadlineの間のスペースを広げる */
+    margin: 0 20px; /* 左右のマージンを追加 */
+    color: #FFFFFF;
 }
 
 label {
@@ -18,12 +24,13 @@ label {
 }
 
 input[type="text"],
-textarea {
-    width: 100%;
-    /*padding: 10px;*/
+input[type="date"] {
+    width: calc(100% - 22px); /* 幅からボーダーの幅を引く */
+    padding: 10px;
     font-size: 16px;
-    /*border: 1px solid #ccc;*/
+    border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box; /* ボーダーとパディングを含める */
 }
 
 button[type="submit"] {
