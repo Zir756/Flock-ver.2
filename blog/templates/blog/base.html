@@ -11,13 +11,13 @@
         <div class="page-header">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-                <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}" style="color: black;">Log out</a>)</small></p>
+                <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}" style="color: #FFFFFF;">Log out</a>)</small></p>
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
             <h1><a href="/">Flock</a></h1>
             <div class="signup-link"> 
-                <a href="{% url 'signup' %}" style="color: black;">新規ユーザー登録</a>
+                <a href="{% url 'signup' %}" style="color: #FFFFFF;">新規ユーザー登録</a>
             </div>
         </div>
         <div class="content container">
@@ -53,9 +53,9 @@
                 </div>
                 <div>
                     {% if user.is_authenticated %}
-                        <!-- Memoリストを表示するためのコードを追加 -->
+                        <!-- Groupリストを表示するためのコードを追加 -->
                         {% include 'group/group_list.html' %}
-                        <!-- Memo追加フォームを表示する -->
+                        <!-- Group追加フォームを表示する -->
                         <form method="post" action="{% url 'group_create' %}">
                             {% csrf_token %}
                             <input type="text" name="group_code">
@@ -63,6 +63,17 @@
                             <a href="{% url 'group_list' %}" class="btn btn-primary">グループ一覧へ</a>
                         </form>
                     {% endif %}
+                </div>
+                <div class="qa-section">
+                    <h2>Q&A</h2>
+                    <!-- 質問の一覧を表示 -->
+                    <ul>
+                       {% for question in questions %}
+                            <li>{{ question.title }}</li>
+                        {% endfor %}
+                    </ul>
+                    <!-- チャットページへのリンク -->
+                    <a href="{% url 'qa_chat_page' %}" class="btn btn-primary">Q&Aの専用ページ</a>
                 </div>
             </div>
         </div>

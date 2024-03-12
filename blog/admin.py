@@ -7,6 +7,8 @@ from .models import Post, Comment
 from .models import ToDo
 from .models import Note
 from .models import Group
+from .models import Question
+from .models import Message
 
 # Register your models here.
 
@@ -18,3 +20,5 @@ admin.site.register(Comment)
 admin.site.register(ToDo)
 admin.site.register(Note)
 admin.site.register(Group)
+admin.site.register(Question)
+admin.site.register(Message)

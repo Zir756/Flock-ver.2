@@ -18,6 +18,10 @@ from .models import Note
 # アプリケーションで定義されたGroupモデルを使用することを意味する。
 from .models import Group
 
+from .models import Question
+
+from .models import Message
+
 # 保留機能
 # from .join_group_form import JoinGroupForm
 
@@ -104,3 +108,13 @@ class GroupForm(forms.ModelForm):
 class JoinGroupForm(forms.Form):
         # group_codeフィールド。
         group_code = forms.CharField(max_length=100)
+        
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ['title', 'content']
+        
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['content']

@@ -7,9 +7,7 @@
 </head>
 <body>
     <h1>Memo List</h1>
-    {% if request.GET.next == '/note/' %}
     <a href="{% url 'post_list' %}" class="btn btn-primary">メインページに戻る</a>
-    {% endif %}
     <ul>
         {% for note in notes %}
             <li><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>

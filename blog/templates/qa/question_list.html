@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question corner</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/question_list.css' %}">
+</head>
+<body>
+    <h1>Questions corner</h1>
+    <ul>
+    {% for question in questions %}
+        {{ question.title }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

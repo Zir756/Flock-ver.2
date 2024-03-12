@@ -1,6 +1,9 @@
 /* 全体のフォームのスタイル */
 body {
-    background-color: #7C7C7C;
+    background-image: url('office_signup.jpg');
+    background-size: cover; /* 画面全体に背景画像を表示し、必要に応じて画像を拡大または縮小します。 */
+    background-repeat: no-repeat; /* 背景画像の繰り返しを無効にします。 */
+    background-position: center; /* 背景画像を中央に配置します。 */
 }
 
 .signup-form {

@@ -141,3 +141,34 @@ class Group(models.Model):
      # objectsマネージャーを追加する。  
     objects = models.Manager()
     
+class Question(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
+        
+    # objectsマネージャーを追加する。  
+    objects = models.Manager()
+    
+class Answer(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    # objectsマネージャーを追加する。  
+    objects = models.Manager()
+    
+class Message(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Message by {self.author}: {self.content}'
+        
+    # objectsマネージャーを追加する。  
+    objects = models.Manager()

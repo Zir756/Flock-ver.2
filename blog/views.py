@@ -29,6 +29,15 @@ from .models import Group
 # アプリケーション内のforms.pyからGroupFormとJoinGroupFormフォームをインポート
 from .forms import GroupForm, JoinGroupForm
 
+from .models import Question, Message
+
+from .forms import QuestionForm, MessageForm
+
+from django.http import HttpResponse, HttpResponseRedirect
+
+from django.urls import reverse
+
+
 # @login_requiredデコレータにより、このビューはログインしているユーザーのみがアクセスできるようになる。
 @login_required
 # post_list関数
@@ -480,3 +489,42 @@ def group_delete(request, pk):
     group.delete()
     # グループが削除されたら、グループリストページにリダイレクトする。
     return redirect('group_list')
+
+# @login_requiredデコレータにより、このビューはログインしているユーザーのみがアクセスできるようになる。
+@login_required
+def qa_chat_page(request):
+    questions = Question.objects.all()
+    messages = Message.objects.all()
+    return render(request, 'qa/qa_chat_page.html', {'questions': questions, 'messages': messages})
+
+@login_required
+def post_question(request):
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        # 質問をデータベースに保存
+        message = Message.objects.create(author=request.user, content=content)
+        # リダイレクト先を指定せずに、チャットエリアに即座に表示させる
+        return redirect('qa_chat_page')
+
+@login_required
+def post_chat_message(request):
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('qa_chat_page')
+    else:
+        form = MessageForm()
+    return render(request, 'qa_chat_page', {'form': form})
+    
+@login_required
+def edit_message(request, message_id):
+    # メッセージの編集ロジックを実装する
+    return HttpResponse("Edit message")
+
+def delete_message(request, message_id):
+    # メッセージの削除ロジックを実装する
+    message = Message.objects.get(pk=message_id)
+    message.delete()
+    # メッセージを削除した後、リダイレクトする
+    return HttpResponseRedirect(reverse('qa_chat_page'))

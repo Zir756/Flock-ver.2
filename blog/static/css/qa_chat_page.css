@@ -1,0 +1,97 @@
+h2 {
+    font-family: 'Times New Roman', cursive;
+    color: #FFFFFF;
+}
+
+body {
+    background-image: url('office_main2.jpg');
+    font-family: 'Times New Roman', cursive;
+    color: #000000;
+    background-size: cover; /* 画像をウィンドウ全体に広げる */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
+}
+
+/* 質問フォームのスタイル */
+form {
+    margin: 0 auto; /* 水平方向に中央寄せ */
+    max-width: 1000px; /* フォームの最大幅を設定 */
+    padding: 20px; /* フォームの内側の余白を追加 */
+    border: 1px solid #ccc; /* ボーダーを追加 */
+    border-radius: 5px; /* 角丸にする */
+    background-color: #f9f9f9; /* 背景色を設定 */
+    box-sizing: border-box; /* paddingとborderを含めた全体の幅を設定 */
+    overflow: hidden; /* テキストエリアがフォームからはみ出さないようにする */
+}
+
+/* テキストエリアのスタイル */
+textarea {
+    width: calc(100% - 40px); /* 幅をフォームのpaddingに合わせて計算 */
+    height: 80px; /* 適切な高さを設定 */
+    margin-bottom: 10px; /* テキストエリアの下部に余白を追加 */
+    resize: none; /* テキストエリアのリサイズを無効にする */
+    display: block; /* ブロック要素として表示する */
+}
+
+/* ボタンのスタイル */
+button {
+    background-color: #007bff; /* ボタンの背景色を設定 */
+    color: #fff; /* テキストの色を設定 */
+    border: none; /* ボーダーをなくす */
+    padding: 10px 20px; /* パディングを設定 */
+    border-radius: 3px; /* 角丸にする */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    transition: background-color 0.3s; /* ホバー時の色変化のアニメーションを設定 */
+}
+
+button:hover {
+    background-color: #0056b3; /* ホバー時の背景色を変更 */
+}
+
+/* チャットメッセージを表示するためのエリア */
+.chat-area {
+    margin: 0 auto; /* 水平方向に中央寄せ */
+    width: 80%; /* 全体の幅を少し抑える */
+    max-width: 1600px; /* 最大幅を設定 */
+    height: 400px; /* チャットエリアの高さを設定 */
+    overflow-y: auto; /* メッセージが表示領域を超える場合はスクロールバーを表示 */
+    background-color: #f2f2f2; /* チャットエリアの背景色を設定 */
+    border-radius: 10px; /* 角丸にする */
+}
+
+/* メッセージ表示エリアのスタイル */
+.message-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* チャットメッセージの吹き出しスタイル */
+.message {
+    background-color: #fff; /* 吹き出しの背景色を設定 */
+    padding: 10px; /* パディングを追加 */
+    margin-bottom: 10px; /* 吹き出し間の余白を追加 */
+    border-radius: 10px; /* 吹き出しを角丸にする */
+    border: 1px solid #ccc; /* 吹き出しの枠線を追加 */
+}
+
+/* メッセージの送信者名のスタイル */
+.message strong {
+    color: #007bff; /* 送信者名の色を設定 */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #0FF6E9;
+}
+
+a:hover {
+    text-decoration: underline;
+}
